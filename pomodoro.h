@@ -16,6 +16,13 @@ class MyFrame : public wxFrame
         int countdown;
 
     //WORK DURATION   
+        void WorkDuration(wxCommandEvent& event)
+        {
+            myDialog1* dialog = new myDialog1(this, "Set Work Duration",workduration);
+            dialog->ShowModal();
+            workduration = dialog->GetSliderValue();
+            dialog->Destroy();
+        }
 
         void WorkDurationUpdated(wxCommandEvent& event){
             int newWorkDuration = event.GetInt();
