@@ -30,7 +30,6 @@ class MyFrame : public wxFrame
             
             timerText->SetLabel(wxString::Format("%02d:00", workduration));
             ResetTimer();
-            //UpdateTimerDisplay();
         }
 
     //END WORK DURATION
@@ -91,14 +90,6 @@ class MyFrame : public wxFrame
         }
     public:
 
-
-        void WorkDuration(wxCommandEvent& event)
-        {
-            myDialog1* dialog = new myDialog1(this, "Set Work Duration",workduration);
-            dialog->ShowModal();
-            workduration = dialog->GetSliderValue();
-            dialog->Destroy();
-        }
         int workduration=25;
         int breakduration=5;
         static const int TimerID = 1001;
